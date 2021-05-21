@@ -24,6 +24,11 @@ class MyHomePage extends StatelessWidget {
     Transaction(
         id: 't3', title: 'New Jeans', amount: 75.89, date: DateTime.now()),
   ];
+  // String titleInput;
+  // String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +36,45 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker App'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
             width: double.infinity,
             child: Card(
               child: Text('Chart!'),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                    controller: titleController,
+                    // onChanged: (value) {
+                    //   titleInput = value;
+                    // },
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount Spent'),
+                    controller: amountController,
+                    // onChanged: (value) {
+                    //   amountInput = value;
+                    // },
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      print(titleController.text);
+                    },
+                    textColor: Colors.purple,
+                    child: Text('Add Transaction!'),
+                  ),
+                ],
+              ),
             ),
           ),
           Column(
