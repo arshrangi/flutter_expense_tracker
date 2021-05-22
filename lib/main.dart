@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_expense_tracker/widgets/new_transaction.dart';
+
+import './widgets/chart.dart';
+import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
 import 'model/transaction.dart';
 
@@ -16,12 +18,12 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
-          title: TextStyle(
-            fontFamily: 'OpenSans',
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
+              title: TextStyle(
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(fontFamily: 'OpenSans', fontSize: 20),
@@ -46,6 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // Transaction(
     //     id: 't3', title: 'New Jeans', amount: 75.89, date: DateTime.now()),
   ];
+
+  List<Transaction> get _recentTransactions {
+    return _userTransactions.where((element) {
+      return element.date.isAfter(
+        DateTime.now().subtract(
+          Duration(days: 7),
+        ),
+      );
+    }).toList();
+  }
 
   void _addNewUserTranasaction(String title, double amount) {
     final newTx = Transaction(
@@ -87,13 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                child: Text('Chart!'),
-                elevation: 5,
-              ),
-            ),
+            Chart(_recentTransactions),
             TransactionList(_userTransactions),
           ],
         ),
