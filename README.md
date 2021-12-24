@@ -18,11 +18,11 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots
 
-![Alt text](/assets/gitlab_sc/transaction_listing.png?raw=true "Articles Listing")
+<img src="/assets/gitlab_sc/transaction_listing.png?raw=true" width="300">
 
-![Alt text](/assets/gitlab_sc/add_new_transaction.png?raw=true "Articles Listing")
+<img src="/assets/gitlab_sc/add_new_transaction.png?raw=true" width="300">
 
-![Alt text](/assets/gitlab_sc/select_date.png?raw=true "Articles Listing")
+<img src="/assets/gitlab_sc/select_date.png?raw=true" width="300">
 
-![Alt text](/assets/gitlab_sc/add_new_transaction.png?raw=true "Articles Listing")
+<img src="/assets/gitlab_sc/no_transactions.png?raw=true" width="300">
 
