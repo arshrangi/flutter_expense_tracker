@@ -1,6 +1,7 @@
-# flutter_expense_tracker
+# Overview
 
-A new Flutter project.
+A Flutter app to track one's expenses. Users can add transactions of their daily purchases and track how much they 
+spent on various items.
 
 ## Getting Started
 
@@ -14,3 +15,14 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Screenshots
+
+![Alt text](/assets/gitlab_sc/transaction_listing.png?raw=true "Articles Listing")
+
+![Alt text](/assets/gitlab_sc/add_new_transaction.png?raw=true "Articles Listing")
+
+![Alt text](/assets/gitlab_sc/select_date.png?raw=true "Articles Listing")
+
+![Alt text](/assets/gitlab_sc/add_new_transaction.png?raw=true "Articles Listing")
+
